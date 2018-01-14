@@ -1,6 +1,11 @@
 <?php include "templates/header.php";?>
 
 <?php
+
+require "../common.php";
+?>
+
+<?php
 if (isset($_POST['submit'])) {
   require "../config.php";
 
@@ -35,6 +40,15 @@ if (isset($_POST['submit'])) {
 	}
 }
 ?>
+
+<?php
+if (isset($_POST['submit']) && $statement)
+{ ?>
+	<blockquote><?php echo escape($_POST['firstname']); ?> successfully added.</blockquote>
+<?php
+} ?>
+
+<h2>Add a User</h2>
 
 <form method="post">
 	<label for="firstname">First Name</label>
